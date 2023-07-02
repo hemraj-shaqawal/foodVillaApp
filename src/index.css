@@ -1,0 +1,52 @@
+/* Type of Css
+-   SCss
+-   inline css
+-   Component library - Material UI, Base UI, Ant, chakra
+-   Styled Component
+-   Tailwind Css Freamwork
+*/
+
+.logo {
+    width: 100px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.nav-items > ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-items > ul > li {
+    padding: 10px;
+}
+
+.card {
+    width: 200px;
+    border: 1px solid #4c3232;
+    margin: 8px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform .2s;
+}
+
+.card:hover {
+    -webkit-box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.75);
+    transform: scale(1.005);
+}
+
+.card > img {
+    width: 100%;
+    height: auto;
+}
+
+.restroList {
+    display: flex;
+    flex-wrap: wrap;
+}

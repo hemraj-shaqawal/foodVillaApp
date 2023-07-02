@@ -1,0 +1,35 @@
+{
+  "name": "foodvillaapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hemraj-shaqawal/foodVillaApp.git"
+  },
+  "author": "Hemraj Shaqawal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hemraj-shaqawal/foodVillaApp/issues"
+  },
+  "homepage": "https://github.com/hemraj-shaqawal/foodVillaApp#readme",
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "parcel": "^2.9.2",
+    "postcss": "^8.4.24",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.0",
+    "react-shimmer-effects": "^1.0.2"
+  }
+}
