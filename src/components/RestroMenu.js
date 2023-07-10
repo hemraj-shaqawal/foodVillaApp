@@ -1,15 +1,19 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import useResturant from '../utill/useResturant';
+import RestroCard from './RestroCard';
 
 const RestroMenu = () => {
     const { id } = useParams();
     const restroDetails = useResturant(id);
-    console.log('restroDetails', restroDetails);   
+    if(restroDetails?.cards[0].card.card.info === undefined) return null;
+    console.log(restroDetails)
 
     return (
         <>
-            <h1>Restro Menu: { id } </h1>
+            {<RestroCard
+              {...restroDetails?.cards[0].card.card.info}             
+            />}
         </>
     )
 }

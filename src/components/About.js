@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Profile from "./Profile";
 import ProfileClass from "./ProfileClass";
 import { render } from "react-dom";
+import UserContext from "../utill/UserContext";
 
 class About extends Component {
     constructor(props) {
@@ -29,6 +30,10 @@ class About extends Component {
     
                 <Profile name={'Hemraj'}/>
                 {/* <ProfileClass name={'jack'}/> */}
+
+                <UserContext.Consumer>
+                    {({user}) => <h4>{ user.name }</h4>}
+                </UserContext.Consumer>
             </>
         )
     }

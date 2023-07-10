@@ -1,4 +1,4 @@
-import react, { lazy, Suspense } from "react";
+import react, { lazy, Suspense, useState } from "react";
 import reactDOM from "react-dom";
 // Defult Import
 import HeaderLayout from './components/Header'
@@ -15,6 +15,10 @@ import Profile from "./components/ProfileClass";
 import RestroMenu from "./components/RestroMenu";
 import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom'
 import { ShimmerSimpleGallery } from "react-shimmer-effects";
+import UserContext from "./utill/UserContext";
+import { Provider } from 'react-redux';
+import Store from './utill/storeCollection/Store'
+
 // import InstaMart from "./components/instaMart";
 
 // All concepts are same..
@@ -32,13 +36,24 @@ const InstaMart = lazy(() => import("./components/InstaMart"));
 // react.Fragment ==> <> </> (represent a empty tag) =. like template in angular
 const AppLayout = () => {
   // Don't do any Lazy loading here.., Because it will be keep rendring.
+  const [user, setUser] = useState({
+    name: 'hemraj..',
+    email: 'hemrajshaqawal@gmail.com'
+  })
   return (
-    <>
-      <HeaderLayout />
-      {/* <Body /> */}
-      <Outlet/>
-      <Footer />
-    </>
+    <Provider store={Store}>
+      <UserContext.Provider value={{
+        user : user,
+        setUser: setUser
+      }}>
+        <div className="content-normal mx-auto px-4 bg-slate-100">
+          <HeaderLayout />
+          {/* <Body /> */}
+          <Outlet/>
+          <Footer />
+        </div>      
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -93,3 +108,14 @@ const appRouter = createBrowserRouter([
 
 const root = reactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter}/>);
+
+/*
+Props Drilling Concepts
+AppLayout
+  (state - user)
+    <Body user={user}>
+      <RestaurantContainer user={user}/>
+         <RestaurantCard user={user}/>
+          <h1>{user.name}</h1>
+
+*/

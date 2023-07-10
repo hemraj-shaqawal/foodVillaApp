@@ -1,5 +1,16 @@
+import { useSelector } from 'react-redux';
+
 const Cart = () => {
-    return <h1>Cart page</h1>
+    const cartItems = useSelector((store) => store.cart.items);
+    return (<>
+        {
+            cartItems.map(element => {
+               return (
+                    <h1>{element}</h1>
+               )
+            })
+        }      
+    </>)
 }
 
 export default Cart

@@ -6,7 +6,11 @@
 -   Tailwind Css Freamwork
 */
 
-.logo {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .logo {
     width: 100px;
 }
 
@@ -49,4 +53,4 @@
 .restroList {
     display: flex;
     flex-wrap: wrap;
-}
+} */
