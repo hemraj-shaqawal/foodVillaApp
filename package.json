@@ -5,6 +5,7 @@
   "main": "src/App.js",
   "scripts": {
     "test": "jest",
+    "watch-test": "jest --watch",
     "start": "parcel src/index.html"
   },
   "repository": {
@@ -32,6 +33,7 @@
     "tailwindcss": "^3.3.2"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.22.5",
     "@reduxjs/toolkit": "^1.9.5",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",

@@ -1,4 +1,4 @@
-filterData = () => {
+const filterData = () => {
     if(searchInput === '') {
         return actualRestroList
     }
